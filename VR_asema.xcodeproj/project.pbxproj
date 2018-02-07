@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D3E0858202B09F600FBC0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E0857202B09F600FBC0C5 /* AppDelegate.swift */; };
+		6D3E085A202B09F600FBC0C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E0859202B09F600FBC0C5 /* ViewController.swift */; };
+		6D3E085D202B09F600FBC0C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E085B202B09F600FBC0C5 /* Main.storyboard */; };
+		6D3E085F202B09F600FBC0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E085E202B09F600FBC0C5 /* Assets.xcassets */; };
+		6D3E0862202B09F600FBC0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E0860202B09F600FBC0C5 /* LaunchScreen.storyboard */; };
+		6D3E086D202B09F600FBC0C5 /* VR_asemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E086C202B09F600FBC0C5 /* VR_asemaTests.swift */; };
+		6D3E0878202B09F600FBC0C5 /* VR_asemaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E0877202B09F600FBC0C5 /* VR_asemaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D3E0869202B09F600FBC0C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D3E084C202B09F600FBC0C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D3E0853202B09F600FBC0C5;
+			remoteInfo = VR_asema;
+		};
+		6D3E0874202B09F600FBC0C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D3E084C202B09F600FBC0C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D3E0853202B09F600FBC0C5;
+			remoteInfo = VR_asema;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D3E0854202B09F600FBC0C5 /* VR_asema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VR_asema.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3E0857202B09F600FBC0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D3E0859202B09F600FBC0C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D3E085C202B09F600FBC0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D3E085E202B09F600FBC0C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D3E0861202B09F600FBC0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D3E0863202B09F600FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3E0868202B09F600FBC0C5 /* VR_asemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VR_asemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3E086C202B09F600FBC0C5 /* VR_asemaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VR_asemaTests.swift; sourceTree = "<group>"; };
+		6D3E086E202B09F600FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3E0873202B09F600FBC0C5 /* VR_asemaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VR_asemaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3E0877202B09F600FBC0C5 /* VR_asemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VR_asemaUITests.swift; sourceTree = "<group>"; };
+		6D3E0879202B09F600FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D3E0851202B09F600FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E0865202B09F600FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E0870202B09F600FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D3E084B202B09F600FBC0C5 = {
+			isa = PBXGroup;
+			children = (
+				6D3E0856202B09F600FBC0C5 /* VR_asema */,
+				6D3E086B202B09F600FBC0C5 /* VR_asemaTests */,
+				6D3E0876202B09F600FBC0C5 /* VR_asemaUITests */,
+				6D3E0855202B09F600FBC0C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D3E0855202B09F600FBC0C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D3E0854202B09F600FBC0C5 /* VR_asema.app */,
+				6D3E0868202B09F600FBC0C5 /* VR_asemaTests.xctest */,
+				6D3E0873202B09F600FBC0C5 /* VR_asemaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D3E0856202B09F600FBC0C5 /* VR_asema */ = {
+			isa = PBXGroup;
+			children = (
+				6D3E0857202B09F600FBC0C5 /* AppDelegate.swift */,
+				6D3E0859202B09F600FBC0C5 /* ViewController.swift */,
+				6D3E085B202B09F600FBC0C5 /* Main.storyboard */,
+				6D3E085E202B09F600FBC0C5 /* Assets.xcassets */,
+				6D3E0860202B09F600FBC0C5 /* LaunchScreen.storyboard */,
+				6D3E0863202B09F600FBC0C5 /* Info.plist */,
+			);
+			path = VR_asema;
+			sourceTree = "<group>";
+		};
+		6D3E086B202B09F600FBC0C5 /* VR_asemaTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D3E086C202B09F600FBC0C5 /* VR_asemaTests.swift */,
+				6D3E086E202B09F600FBC0C5 /* Info.plist */,
+			);
+			path = VR_asemaTests;
+			sourceTree = "<group>";
+		};
+		6D3E0876202B09F600FBC0C5 /* VR_asemaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D3E0877202B09F600FBC0C5 /* VR_asemaUITests.swift */,
+				6D3E0879202B09F600FBC0C5 /* Info.plist */,
+			);
+			path = VR_asemaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D3E0853202B09F600FBC0C5 /* VR_asema */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3E087C202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asema" */;
+			buildPhases = (
+				6D3E0850202B09F600FBC0C5 /* Sources */,
+				6D3E0851202B09F600FBC0C5 /* Frameworks */,
+				6D3E0852202B09F600FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VR_asema;
+			productName = VR_asema;
+			productReference = 6D3E0854202B09F600FBC0C5 /* VR_asema.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D3E0867202B09F600FBC0C5 /* VR_asemaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3E087F202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asemaTests" */;
+			buildPhases = (
+				6D3E0864202B09F600FBC0C5 /* Sources */,
+				6D3E0865202B09F600FBC0C5 /* Frameworks */,
+				6D3E0866202B09F600FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D3E086A202B09F600FBC0C5 /* PBXTargetDependency */,
+			);
+			name = VR_asemaTests;
+			productName = VR_asemaTests;
+			productReference = 6D3E0868202B09F600FBC0C5 /* VR_asemaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D3E0872202B09F600FBC0C5 /* VR_asemaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3E0882202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asemaUITests" */;
+			buildPhases = (
+				6D3E086F202B09F600FBC0C5 /* Sources */,
+				6D3E0870202B09F600FBC0C5 /* Frameworks */,
+				6D3E0871202B09F600FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D3E0875202B09F600FBC0C5 /* PBXTargetDependency */,
+			);
+			name = VR_asemaUITests;
+			productName = VR_asemaUITests;
+			productReference = 6D3E0873202B09F600FBC0C5 /* VR_asemaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D3E084C202B09F600FBC0C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Matti Saarela";
+				TargetAttributes = {
+					6D3E0853202B09F600FBC0C5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					6D3E0867202B09F600FBC0C5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D3E0853202B09F600FBC0C5;
+					};
+					6D3E0872202B09F600FBC0C5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D3E0853202B09F600FBC0C5;
+					};
+				};
+			};
+			buildConfigurationList = 6D3E084F202B09F600FBC0C5 /* Build configuration list for PBXProject "VR_asema" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D3E084B202B09F600FBC0C5;
+			productRefGroup = 6D3E0855202B09F600FBC0C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D3E0853202B09F600FBC0C5 /* VR_asema */,
+				6D3E0867202B09F600FBC0C5 /* VR_asemaTests */,
+				6D3E0872202B09F600FBC0C5 /* VR_asemaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D3E0852202B09F600FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3E0862202B09F600FBC0C5 /* LaunchScreen.storyboard in Resources */,
+				6D3E085F202B09F600FBC0C5 /* Assets.xcassets in Resources */,
+				6D3E085D202B09F600FBC0C5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E0866202B09F600FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E0871202B09F600FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D3E0850202B09F600FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3E085A202B09F600FBC0C5 /* ViewController.swift in Sources */,
+				6D3E0858202B09F600FBC0C5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E0864202B09F600FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3E086D202B09F600FBC0C5 /* VR_asemaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3E086F202B09F600FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3E0878202B09F600FBC0C5 /* VR_asemaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D3E086A202B09F600FBC0C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D3E0853202B09F600FBC0C5 /* VR_asema */;
+			targetProxy = 6D3E0869202B09F600FBC0C5 /* PBXContainerItemProxy */;
+		};
+		6D3E0875202B09F600FBC0C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D3E0853202B09F600FBC0C5 /* VR_asema */;
+			targetProxy = 6D3E0874202B09F600FBC0C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D3E085B202B09F600FBC0C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D3E085C202B09F600FBC0C5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D3E0860202B09F600FBC0C5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D3E0861202B09F600FBC0C5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D3E087A202B09F600FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6D3E087B202B09F600FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D3E087D202B09F600FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asema/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asema";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D3E087E202B09F600FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asema/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asema";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6D3E0880202B09F600FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asemaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asemaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VR_asema.app/VR_asema";
+			};
+			name = Debug;
+		};
+		6D3E0881202B09F600FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asemaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asemaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VR_asema.app/VR_asema";
+			};
+			name = Release;
+		};
+		6D3E0883202B09F600FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asemaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asemaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VR_asema;
+			};
+			name = Debug;
+		};
+		6D3E0884202B09F600FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VR_asemaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Matti.VR-asemaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VR_asema;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D3E084F202B09F600FBC0C5 /* Build configuration list for PBXProject "VR_asema" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3E087A202B09F600FBC0C5 /* Debug */,
+				6D3E087B202B09F600FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D3E087C202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asema" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3E087D202B09F600FBC0C5 /* Debug */,
+				6D3E087E202B09F600FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D3E087F202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asemaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3E0880202B09F600FBC0C5 /* Debug */,
+				6D3E0881202B09F600FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D3E0882202B09F600FBC0C5 /* Build configuration list for PBXNativeTarget "VR_asemaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3E0883202B09F600FBC0C5 /* Debug */,
+				6D3E0884202B09F600FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D3E084C202B09F600FBC0C5 /* Project object */;
+}
