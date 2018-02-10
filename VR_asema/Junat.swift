@@ -20,7 +20,7 @@ struct RouteRow {
 struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennepaikoilta. Järjestetty reitin mukaiseen järjestykseen.
     let trainStopping: Bool // true,false Info Pysähtyykö juna liikennepaikalla
     let stationShortCode: String // Info Aseman lyhennekoodi
-    let stationUICCode: NSInteger // 1-9999 Info Aseman UIC-koodi
+    let stationUICCode: Int // 1-9999 Info Aseman UIC-koodi
     let countryCode: String // “FI”, “RU”
     let type: String // “ARRIVAL” tai “DEPARTURE” Info Pysähdyksen tyyppi
     let commercialStop: Bool? // boolean Info Onko pysähdys kaupallinen. Annettu vain pysähdyksille, ei läpiajoille. Mikäli junalla on osaväliperumisia, saattaa viimeinen perumista edeltävä pysähdys jäädä virheellisesti ei-kaupalliseksi.
@@ -32,7 +32,6 @@ struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennep
     let actualTime: Date? // datetime Info Aika jolloin juna saapui tai lähti asemalta
     let differenceInMinutes: Int? // integer Info Vertaa aikataulun mukaista aikaa ennusteeseen tai toteutuneeseen aikaan ja kertoo erotuksen minuutteina
 
-    
     struct causes: Codable {// Info Syytiedot. Kuvaavat syitä miksi juna oli myöhässä tai etuajassa pysähdyksellä. Kaikkia syyluokkia ja -tietoja ei julkaista.
         let categoryCodeId: String // Info Yleisen syyluokan yksilöivä tunnus. Lista syyluokista löytyy osoitteesta metadata/cause-category-codes
         let categoryCode: String // Info Yleisen syyluokan koodi. Huom. ei yksilöivä.
@@ -40,8 +39,6 @@ struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennep
         let detailedCategoryCode: String? // Info Tarkempi syykoodin koodi. Huom. ei yksilöivä
         let thirdCategoryCodeId: String? // Info Kolmannen tason syykoodin tunnus.
         let thirdCategoryCode: String? // Info Kolmannen tason syykoodin koodi. Huom. ei yksilöivä
-        
-       
     }
     
     struct trainReady: Codable {   // Info Junan lähtövalmius. Operaattorin tulee tehdä lähtövalmiusilmoitus liikenteenohjaajalle aina kun junan kokoonpanovaihtuu tai se lähtee ensimmäiseltä pysäkiltään.
@@ -49,16 +46,14 @@ struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennep
         let accepted: Bool? // Info Onko lähtövalmiusilmoitus hyväksytty.
         let timestamp: String? // Info Aika jolloin lähtövalmiusilmoitus on päätetty.
     }
- 
 }
-
 
 //Junat -tietotyyppi
 struct Junat: Codable {
     
     let trainNumber : NSInteger // 1-99999 Info Junan numero. Esim junan “IC 59” junanumero on 59
     let departureDate: Date //  date Info Junan ensimmäisen lähdön päivämäärä
-    let operatorUICCode: NSInteger // 1-9999 Info Junan operoiman operaattorin UIC-koodi
+    let operatorUICCode: Int // 1-9999 Info Junan operoiman operaattorin UIC-koodi
     let operatorShortCode: String  //vr-track, destia, … Info Lista operaattoreista löytyy täältä.
     let trainType: String // IC, P, S, …
     let trainCategory: String // lähiliikenne, kaukoliikenne, tavaraliikenne, …
@@ -79,10 +74,9 @@ struct Station: Codable {
     let countryCode: String // Info Liikennepaikan maatunnus
     let stationName: String // Info Liikennepaikan nimi
     let stationShortCode: String // Info Liikennepaikan lyhenne
-    let stationUICCode: NSInteger // 1-9999 Info Liikennepaikan maakohtainen UIC-koodi
+    let stationUICCode: Int // 1-9999 Info Liikennepaikan maakohtainen UIC-koodi
     let latitude: Double // Info Liikennepaikan latitude “WGS 84”-muodossa
     let longitude: Double // Info Liikennepaikan longitudi “WGS 84”-muodossa
     let type: String // Info Liikennepaikan tyyppi. STATION = asema, STOPPING_POINT = seisake, TURNOUT_IN_THE_OPEN_LINE = linjavaihde
-
 }
 

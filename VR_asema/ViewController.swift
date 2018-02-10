@@ -71,7 +71,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.asemat = decoded_stationData
                 }
                 self.asematFull = decoded_stationData
-                print("station decoding successful")
                 DispatchQueue.main.async {
                     //Taulukon päivittäminen täytyy suorittaa pääsäikeessä
                     self.asematFiltered = self.asemat

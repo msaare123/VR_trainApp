@@ -95,7 +95,6 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            print ("Downloaded successfully!")
             
             //JSON Dekoodaus
             do{
@@ -139,7 +138,6 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                     self.junat = decoded_mainData
                 }
 
-                print("decoding successful")
                 DispatchQueue.main.async { //Kutsutaan pääsäije
                     //Järjestetään taulu ajankohdan mukaan.
 
