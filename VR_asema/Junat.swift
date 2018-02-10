@@ -51,7 +51,7 @@ struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennep
 //Junat -tietotyyppi
 struct Junat: Codable {
     
-    let trainNumber : NSInteger // 1-99999 Info Junan numero. Esim junan “IC 59” junanumero on 59
+    let trainNumber : Int // 1-99999 Info Junan numero. Esim junan “IC 59” junanumero on 59
     let departureDate: Date //  date Info Junan ensimmäisen lähdön päivämäärä
     let operatorUICCode: Int // 1-9999 Info Junan operoiman operaattorin UIC-koodi
     let operatorShortCode: String  //vr-track, destia, … Info Lista operaattoreista löytyy täältä.
