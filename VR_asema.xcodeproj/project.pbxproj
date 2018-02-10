@@ -14,6 +14,13 @@
 		6D3E0862202B09F600FBC0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E0860202B09F600FBC0C5 /* LaunchScreen.storyboard */; };
 		6D3E086D202B09F600FBC0C5 /* VR_asemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E086C202B09F600FBC0C5 /* VR_asemaTests.swift */; };
 		6D3E0878202B09F600FBC0C5 /* VR_asemaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E0877202B09F600FBC0C5 /* VR_asemaUITests.swift */; };
+		6D3E088A202B0CAD00FBC0C5 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E0889202B0CAD00FBC0C5 /* StationListViewController.swift */; };
+		6D3E088C202B0E5300FBC0C5 /* Junat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E088B202B0E5300FBC0C5 /* Junat.swift */; };
+		6D3E0890202B4A6200FBC0C5 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E088F202B4A6200FBC0C5 /* StationTableViewCell.swift */; };
+		6D8DC933202DDB9C00B4BA1A /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC932202DDB9C00B4BA1A /* RouteTableViewCell.swift */; };
+		6DB7162F202EF9070005D14B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7162E202EF9070005D14B /* SettingsViewController.swift */; };
+		6DCC9F74202C60B300D5FBA2 /* TrainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC9F73202C60B300D5FBA2 /* TrainTableViewCell.swift */; };
+		6DE5E432202DA0EC00E76B0E /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE5E431202DA0EC00E76B0E /* RouteDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		6D3E0873202B09F600FBC0C5 /* VR_asemaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VR_asemaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3E0877202B09F600FBC0C5 /* VR_asemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VR_asemaUITests.swift; sourceTree = "<group>"; };
 		6D3E0879202B09F600FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3E0889202B0CAD00FBC0C5 /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
+		6D3E088B202B0E5300FBC0C5 /* Junat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Junat.swift; sourceTree = "<group>"; };
+		6D3E088F202B4A6200FBC0C5 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
+		6D8DC932202DDB9C00B4BA1A /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		6DB7162E202EF9070005D14B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6DCC9F73202C60B300D5FBA2 /* TrainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableViewCell.swift; sourceTree = "<group>"; };
+		6DE5E431202DA0EC00E76B0E /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +113,14 @@
 			children = (
 				6D3E0857202B09F600FBC0C5 /* AppDelegate.swift */,
 				6D3E0859202B09F600FBC0C5 /* ViewController.swift */,
+				6DB7162E202EF9070005D14B /* SettingsViewController.swift */,
+				6D3E0889202B0CAD00FBC0C5 /* StationListViewController.swift */,
+				6DE5E431202DA0EC00E76B0E /* RouteDetailViewController.swift */,
+				6D8DC932202DDB9C00B4BA1A /* RouteTableViewCell.swift */,
+				6DCC9F73202C60B300D5FBA2 /* TrainTableViewCell.swift */,
+				6D3E088F202B4A6200FBC0C5 /* StationTableViewCell.swift */,
 				6D3E085B202B09F600FBC0C5 /* Main.storyboard */,
+				6D3E088B202B0E5300FBC0C5 /* Junat.swift */,
 				6D3E085E202B09F600FBC0C5 /* Assets.xcassets */,
 				6D3E0860202B09F600FBC0C5 /* LaunchScreen.storyboard */,
 				6D3E0863202B09F600FBC0C5 /* Info.plist */,
@@ -260,7 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3E085A202B09F600FBC0C5 /* ViewController.swift in Sources */,
+				6D3E088C202B0E5300FBC0C5 /* Junat.swift in Sources */,
+				6D3E0890202B4A6200FBC0C5 /* StationTableViewCell.swift in Sources */,
+				6DE5E432202DA0EC00E76B0E /* RouteDetailViewController.swift in Sources */,
 				6D3E0858202B09F600FBC0C5 /* AppDelegate.swift in Sources */,
+				6D8DC933202DDB9C00B4BA1A /* RouteTableViewCell.swift in Sources */,
+				6DCC9F74202C60B300D5FBA2 /* TrainTableViewCell.swift in Sources */,
+				6D3E088A202B0CAD00FBC0C5 /* StationListViewController.swift in Sources */,
+				6DB7162F202EF9070005D14B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
