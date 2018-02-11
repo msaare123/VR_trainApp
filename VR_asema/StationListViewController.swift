@@ -26,6 +26,13 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
     var navTitle: String? = nil
     var settings = Settings()
     
+    //DateFormatter päivämäärän esitykseen stringinä
+    private static let fromDate: DateFormatter = {
+        let fromDate = DateFormatter()
+        fromDate.dateFormat = "dd.MM.yyyy HH:mm"
+        return fromDate
+    }()
+    
     //IF Outlets
     @IBOutlet weak var tableActivity: UIActivityIndicatorView!
     @IBOutlet weak var TrainTableView: UITableView!
@@ -139,8 +146,8 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                 }
 
                 DispatchQueue.main.async { //Kutsutaan pääsäije
+                    
                     //Järjestetään taulu ajankohdan mukaan.
-
                     self.junat.sort(by: { (i0, i1) -> Bool in
                         if i0.timeTableRows.filter({$0.stationShortCode == self.selectedStation && $0.type == self.selectedAction})[0].liveEstimateTime != nil{
                             if i1.timeTableRows.filter({$0.stationShortCode == self.selectedStation && $0.type == self.selectedAction})[0].liveEstimateTime != nil{
@@ -186,25 +193,23 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         //Suodatetaan aikataulusta halutun aseman data
         let filteredStationRow = junat[indexPath.row].timeTableRows.filter{$0.stationShortCode == selectedStation && $0.type == selectedAction}
         
-        //Siistimpään päivämääräesitykseen tehdään oma dateformatter
-        let fromDate: DateFormatter = DateFormatter()
-        fromDate.dateFormat = "dd.MM.yyyy HH:mm"
+
         
         //Asetetaan labelien sisällöt
         if (filteredStationRow.count > 0) {
             if filteredStationRow[0].liveEstimateTime != nil {
                 if selectedAction == "DEPARTURE" {
-                    cell.timeLabel.text = fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
+                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
                 }
                 else if selectedAction == "ARRIVAL" {
-                    cell.timeLabel.text = fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
+                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
                 }
             }
             else {
                 if selectedAction == "DEPARTURE" {
-                    cell.timeLabel.text = fromDate.string(from: filteredStationRow[0].scheduledTime)}
+                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].scheduledTime)}
                 else if selectedAction == "ARRIVAL" {
-                    cell.timeLabel.text = fromDate.string(from: filteredStationRow[0].scheduledTime)}
+                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].scheduledTime)}
             }
         }
         cell.trainNumberLabel.text = String(junat[indexPath.row].trainType) + String(junat[indexPath.row].trainNumber)

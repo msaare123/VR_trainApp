@@ -162,8 +162,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func setSettings(settings: Settings) {
         self.settings = settings
     }
-    
-    
-  
 }
 

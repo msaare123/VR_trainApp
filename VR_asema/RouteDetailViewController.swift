@@ -14,6 +14,14 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
     var timeTableRaw = [TimeTableRow]()
     var stations = [Station]()
     var navTitle: String? = nil
+    
+    private static let fromDate: DateFormatter = {
+        //Siistimpään päivämääräesitykseen tehdään oma dateformatter
+        let fromDate = DateFormatter()
+        fromDate.dateFormat = "HH:mm"
+        return fromDate
+    }()
+    
 
 
     @IBOutlet weak var routeTableView: UITableView!
@@ -43,9 +51,7 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         
 
         
-        //Siistimpään päivämääräesitykseen tehdään oma dateformatter
-        let fromDate: DateFormatter = DateFormatter()
-        fromDate.dateFormat = "HH:mm"
+
         cell.additional_label.isHidden = true
 
         if timeTableRaw[indexPath.row].type == "DEPARTURE" {
@@ -53,15 +59,15 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
             cell.timetext_label.isHidden = false
             cell.timetext_label.text = "Lähtöaika:"
             if timeTableRaw[indexPath.row].actualTime != nil {
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
                 cell.additional_label.text = "actual"
             }
             else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
                 cell.additional_label.text = "estimate"
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
             }
             else {
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
             }
         }
             
@@ -70,13 +76,13 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
             cell.timetext_label.isHidden = false
             cell.timetext_label.text = "Saapumisaika:"
             if timeTableRaw[indexPath.row].actualTime != nil {
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
             }
             else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
             }
             else {
-                cell.time_label.text = fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
+                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
             }
         }
         else {
