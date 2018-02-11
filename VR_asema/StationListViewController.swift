@@ -75,6 +75,7 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
+
     func downloadTrainJSON(){
         //Funktio joka lataa JSON-taulukon junat-muuttujaan
         
@@ -138,12 +139,29 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                     throw DateError.invalidDate
                 })
                 let decoded_mainData = try decoder.decode([Junat].self, from: data)
-                if self.settings.showCargo == false {
-                    self.junat = decoded_mainData.filter({$0.trainCategory != "Locomotive" && $0.trainCategory != "Shunting" && $0.trainCategory != "Test drive" && $0.trainCategory != "Cargo" && $0.trainCategory != "On-track machines"})
-                }
-                else if self.settings.showCargo == true {
-                    self.junat = decoded_mainData
-                }
+                
+                //Suodatetaan datasta asetusten mukaiset
+                self.junat = decoded_mainData.filter({ (juna) -> Bool in
+                    switch (juna.trainCategory) {
+                    case "Commuter":
+                        return self.settings.showCommuter
+                    case "Locomotive":
+                        return self.settings.showCargo
+                    case "Shunting":
+                        return self.settings.showCargo
+                    case "Long-distance":
+                        return self.settings.showLongDistance
+                    case "Cargo":
+                        return self.settings.showCargo
+                    case "On-track machines":
+                        return self.settings.showCargo
+                    case "Test drive":
+                        return self.settings.showCargo
+                    default:
+                        return false
+                    }
+                })
+
 
                 DispatchQueue.main.async { //Kutsutaan pääsäije
                     

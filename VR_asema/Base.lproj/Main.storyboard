@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RSI-9r-rUG">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,17 +22,17 @@
             <objects>
                 <viewController id="owa-j3-8H9" userLabel="Settings_View_Controller" customClass="SettingsViewController" customModule="VR_asema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMS-CB-vKB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="48" translatesAutoresizingMaskIntoConstraints="NO" id="fuc-ZT-uKD">
-                                <rect key="frame" x="66" y="153" width="243" height="31"/>
+                                <rect key="frame" x="66" y="153" width="282" height="31"/>
                                 <connections>
                                     <action selector="hourSliderValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="SWA-vT-tdg"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä junat seuraavan xx tunnin ajalta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZd-m7-xY8">
-                                <rect key="frame" x="51" y="100" width="273" height="45"/>
+                                <rect key="frame" x="70.666666666666686" y="100" width="273" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7iR-oz-qqV"/>
                                 </constraints>
@@ -40,55 +40,96 @@
                                 <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä vain henkilöliikenteen asemat" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPS-JO-c5y">
-                                <rect key="frame" x="44" y="202" width="209" height="70"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-QR-o4o">
+                                <rect key="frame" x="345" y="222" width="51" height="31"/>
+                                <connections>
+                                    <action selector="commercialStationsOnlySwitchValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="cTr-NS-2i6"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä rahtiliikenne" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-q5-LBI">
+                                <rect key="frame" x="31" y="278" width="261" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="eTz-ZA-WxQ"/>
+                                    <constraint firstAttribute="height" constant="70" id="weM-XM-UkX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-QR-o4o">
-                                <rect key="frame" x="306" y="222" width="51" height="31"/>
-                                <connections>
-                                    <action selector="commercialStationsOnlySwitchValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="cTr-NS-2i6"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä vain henkilöliikenne" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-q5-LBI">
-                                <rect key="frame" x="44" y="280" width="209" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä kaukoliikenne" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-WY-xpc">
+                                <rect key="frame" x="31" y="360" width="261" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="WOe-sI-HNB"/>
+                                    <constraint firstAttribute="height" constant="60" id="hrs-Of-T7p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä lähiliikenne" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN5-vI-GHg">
+                                <rect key="frame" x="31" y="432" width="261" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ywV-2B-l6y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-ot-KO1">
-                                <rect key="frame" x="306" y="300" width="51" height="31"/>
+                                <rect key="frame" x="345" y="298" width="51" height="31"/>
                                 <connections>
                                     <action selector="cargoSwitchValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="1od-Vd-lz7"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfF-ds-M0L">
+                                <rect key="frame" x="345" y="374" width="51" height="31"/>
+                                <connections>
+                                    <action selector="longDistanceSwitchValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="G1q-Dc-VTH"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSl-gg-jzx">
+                                <rect key="frame" x="345" y="450" width="51" height="31"/>
+                                <connections>
+                                    <action selector="commuterSwitchValueChanged:" destination="owa-j3-8H9" eventType="valueChanged" id="o45-78-Dpn"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Näytä vain henkilöliikenteen asemat" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPS-JO-c5y">
+                                <rect key="frame" x="31" y="197" width="261" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="gxG-EW-3Pc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.93613281250000002" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UZd-m7-xY8" firstAttribute="centerX" secondItem="5AO-aY-1WL" secondAttribute="centerX" id="2fM-q1-jh0"/>
-                            <constraint firstItem="o4c-ot-KO1" firstAttribute="leading" secondItem="VuI-q5-LBI" secondAttribute="trailing" constant="53" id="72K-Dj-nFE"/>
-                            <constraint firstItem="Fe8-QR-o4o" firstAttribute="leading" secondItem="OPS-JO-c5y" secondAttribute="trailing" constant="53" id="7F0-HD-tuZ"/>
+                            <constraint firstItem="iaJ-WY-xpc" firstAttribute="width" secondItem="VuI-q5-LBI" secondAttribute="width" id="3eP-7K-x4u"/>
+                            <constraint firstItem="PSl-gg-jzx" firstAttribute="top" secondItem="cfF-ds-M0L" secondAttribute="bottom" constant="45" id="3l5-Z1-bB8"/>
+                            <constraint firstItem="VuI-q5-LBI" firstAttribute="top" secondItem="OPS-JO-c5y" secondAttribute="bottom" constant="1" id="8Ix-Yb-4Aa"/>
+                            <constraint firstItem="cfF-ds-M0L" firstAttribute="top" secondItem="o4c-ot-KO1" secondAttribute="bottom" constant="45" id="8xg-kr-WxT"/>
+                            <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="o4c-ot-KO1" secondAttribute="trailing" constant="20" id="AmZ-aB-2vP"/>
                             <constraint firstItem="fuc-ZT-uKD" firstAttribute="top" secondItem="UZd-m7-xY8" secondAttribute="bottom" constant="8" id="KK3-dy-caq"/>
-                            <constraint firstItem="VuI-q5-LBI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="20" id="OG5-1u-0qx"/>
                             <constraint firstItem="fuc-ZT-uKD" firstAttribute="leading" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="68" id="OlL-NH-vP0"/>
-                            <constraint firstItem="o4c-ot-KO1" firstAttribute="top" secondItem="Fe8-QR-o4o" secondAttribute="bottom" constant="47" id="Tnh-UE-OH4"/>
+                            <constraint firstItem="eN5-vI-GHg" firstAttribute="top" secondItem="iaJ-WY-xpc" secondAttribute="bottom" constant="12" id="PoH-ec-fCP"/>
+                            <constraint firstItem="VuI-q5-LBI" firstAttribute="leading" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="31" id="QUM-o3-aSn"/>
+                            <constraint firstItem="OPS-JO-c5y" firstAttribute="leading" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="31" id="Rk8-Eu-qIU"/>
+                            <constraint firstItem="o4c-ot-KO1" firstAttribute="top" secondItem="Fe8-QR-o4o" secondAttribute="bottom" constant="45" id="SLN-oM-jGM"/>
                             <constraint firstItem="UZd-m7-xY8" firstAttribute="top" secondItem="5AO-aY-1WL" secondAttribute="top" constant="36" id="VI7-aF-6pA"/>
-                            <constraint firstItem="OPS-JO-c5y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="20" id="XdR-9o-q2a"/>
-                            <constraint firstItem="Fe8-QR-o4o" firstAttribute="top" secondItem="fuc-ZT-uKD" secondAttribute="bottom" constant="39" id="ZJF-RJ-kqJ"/>
-                            <constraint firstItem="OPS-JO-c5y" firstAttribute="top" secondItem="fuc-ZT-uKD" secondAttribute="bottom" constant="19" id="c0F-5M-mJv"/>
-                            <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="o4c-ot-KO1" secondAttribute="trailing" constant="20" id="daE-I7-KXc"/>
-                            <constraint firstItem="VuI-q5-LBI" firstAttribute="top" secondItem="OPS-JO-c5y" secondAttribute="bottom" constant="8" id="eHV-ow-lf2"/>
+                            <constraint firstItem="o4c-ot-KO1" firstAttribute="leading" secondItem="VuI-q5-LBI" secondAttribute="trailing" constant="53" id="VSG-j8-xfn"/>
+                            <constraint firstItem="cfF-ds-M0L" firstAttribute="leading" secondItem="iaJ-WY-xpc" secondAttribute="trailing" constant="53" id="W6j-7b-7eF"/>
+                            <constraint firstItem="iaJ-WY-xpc" firstAttribute="leading" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="31" id="YMb-Iz-PK6"/>
+                            <constraint firstItem="eN5-vI-GHg" firstAttribute="width" secondItem="iaJ-WY-xpc" secondAttribute="width" id="ZsP-vk-PiN"/>
+                            <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="Fe8-QR-o4o" secondAttribute="trailing" constant="20" id="cBF-WC-fLo"/>
+                            <constraint firstItem="VuI-q5-LBI" firstAttribute="width" secondItem="OPS-JO-c5y" secondAttribute="width" id="d2R-ps-Iy9"/>
                             <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="fuc-ZT-uKD" secondAttribute="trailing" constant="68" id="eSl-Zs-EH5"/>
-                            <constraint firstItem="VuI-q5-LBI" firstAttribute="width" secondItem="OPS-JO-c5y" secondAttribute="width" id="jYa-OD-ycA"/>
-                            <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="Fe8-QR-o4o" secondAttribute="trailing" constant="20" id="kJT-U4-rBx"/>
+                            <constraint firstItem="Fe8-QR-o4o" firstAttribute="leading" secondItem="OPS-JO-c5y" secondAttribute="trailing" constant="53" id="eUc-fd-HOz"/>
+                            <constraint firstItem="iaJ-WY-xpc" firstAttribute="top" secondItem="VuI-q5-LBI" secondAttribute="bottom" constant="12" id="f1N-ut-naQ"/>
+                            <constraint firstItem="eN5-vI-GHg" firstAttribute="leading" secondItem="5AO-aY-1WL" secondAttribute="leading" constant="31" id="gtb-fQ-8PV"/>
+                            <constraint firstItem="PSl-gg-jzx" firstAttribute="leading" secondItem="eN5-vI-GHg" secondAttribute="trailing" constant="53" id="jNf-8y-JDt"/>
+                            <constraint firstItem="OPS-JO-c5y" firstAttribute="top" secondItem="fuc-ZT-uKD" secondAttribute="bottom" constant="14" id="n4W-Uk-bfJ"/>
+                            <constraint firstItem="5AO-aY-1WL" firstAttribute="trailing" secondItem="cfF-ds-M0L" secondAttribute="trailing" constant="20" id="ood-A2-Xvc"/>
+                            <constraint firstItem="Fe8-QR-o4o" firstAttribute="top" secondItem="fuc-ZT-uKD" secondAttribute="bottom" constant="39" id="wnQ-la-qgd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5AO-aY-1WL"/>
                     </view>
@@ -96,8 +137,10 @@
                     <connections>
                         <outlet property="cargoSwitch" destination="o4c-ot-KO1" id="VVe-bA-W7F"/>
                         <outlet property="commercialStationsOnlySwitch" destination="Fe8-QR-o4o" id="Z2c-Ny-vcT"/>
+                        <outlet property="commuterSwitch" destination="PSl-gg-jzx" id="D67-Qv-Tgy"/>
                         <outlet property="hourLabel" destination="UZd-m7-xY8" id="oTo-rc-YGG"/>
                         <outlet property="hourSlider" destination="fuc-ZT-uKD" id="2eo-9K-hbR"/>
+                        <outlet property="longDistanceSwitch" destination="cfF-ds-M0L" id="54t-uW-L4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4r-YP-eMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,22 +152,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Picker_View_Controller" customClass="ViewController" customModule="VR_asema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-mR-5ti">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="622"/>
                                 <color key="backgroundColor" red="0.96811521628181341" green="0.96811521628181341" blue="0.96811521628181341" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="StationTableProto" rowHeight="58" id="5m6-qd-FKx" customClass="StationTableViewCell" customModule="VR_asema" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="58"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="StationTableProto" rowHeight="58" id="5m6-qd-FKx" customClass="StationTableViewCell" customModule="VR_asema" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5m6-qd-FKx" id="k0z-pu-nuE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MB-x1-6qe">
-                                                    <rect key="frame" x="42.5" y="8" width="291" height="41"/>
+                                                    <rect key="frame" x="62" y="8" width="291" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="4ue-8X-s8h"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="291" id="jXI-oQ-6e9"/>
@@ -151,7 +194,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTc-dN-47v">
-                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                                <rect key="frame" x="0.0" y="686" width="207" height="50"/>
                                 <color key="backgroundColor" white="0.20672433035714285" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sya-TI-JXU"/>
@@ -165,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVZ-JB-JEy">
-                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
+                                <rect key="frame" x="207" y="686" width="207" height="50"/>
                                 <color key="backgroundColor" white="0.20999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="YqV-a4-PKE"/>
@@ -231,40 +274,40 @@
             <objects>
                 <viewController id="BbT-zc-aw7" userLabel="Station_list_ViewController" customClass="StationListViewController" customModule="VR_asema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="39E-Mc-zR5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-bc-nWg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.96811521629999997" green="0.96811521629999997" blue="0.96811521629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="TrainTableProto" rowHeight="100" id="KDo-om-uHf" customClass="TrainTableViewCell" customModule="VR_asema" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KDo-om-uHf" id="fDo-XA-HsJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaupunki1 - Kaupunki 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8P-HY-TPB">
-                                                    <rect key="frame" x="61.5" y="0.0" width="197" height="25"/>
+                                                    <rect key="frame" x="108.66666666666669" y="0.0" width="197" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JunanNro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3m-po-hKk">
-                                                    <rect key="frame" x="15" y="74" width="76.5" height="23.5"/>
+                                                    <rect key="frame" x="15" y="74" width="76.666666666666671" height="23.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Junakategoria" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-11-Wy8">
-                                                    <rect key="frame" x="194.5" y="74.5" width="110.5" height="23"/>
+                                                    <rect key="frame" x="288.66666666666669" y="74.666666666666671" width="110.33333333333331" height="23"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd/MM/YYYY mm:ss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm4-Sy-hgD">
-                                                    <rect key="frame" x="80" y="26" width="160" height="45.5"/>
+                                                    <rect key="frame" x="127" y="25.999999999999996" width="160" height="45.666666666666657"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -297,7 +340,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mkP-1K-k4x">
-                                <rect key="frame" x="176.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="196" y="358" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -326,40 +369,40 @@
             <objects>
                 <viewController id="o1Z-fD-db3" userLabel="Route_detail_ViewController" customClass="RouteDetailViewController" customModule="VR_asema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZgR-ja-yHX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hDc-eL-DnG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.96811521629999997" green="0.96811521629999997" blue="0.96811521629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeProto" rowHeight="67" id="kFi-Kd-3ro" customClass="RouteTableViewCell" customModule="VR_asema" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeProto" rowHeight="67" id="kFi-Kd-3ro" customClass="RouteTableViewCell" customModule="VR_asema" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kFi-Kd-3ro" id="y7B-Ng-sqQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lisätiedot" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-WU-gQp">
-                                                    <rect key="frame" x="280" y="31" width="80" height="25"/>
+                                                    <rect key="frame" x="319" y="31" width="80" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02.02.2018 02:02" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxh-8a-c2c">
-                                                    <rect key="frame" x="15" y="29.5" width="145" height="25"/>
+                                                    <rect key="frame" x="15" y="29.666666666666671" width="145" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lähtöaika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmG-J2-RNt">
-                                                    <rect key="frame" x="15" y="12" width="62.5" height="19.5"/>
+                                                    <rect key="frame" x="14.999999999999996" y="12.000000000000002" width="62.666666666666657" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kouvola Oikoraide" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bk-xd-I5f">
-                                                    <rect key="frame" x="205.5" y="0.0" width="154.5" height="25"/>
+                                                    <rect key="frame" x="244.66666666666663" y="0.0" width="154.33333333333337" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -414,7 +457,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RSI-9r-rUG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SCJ-QA-2vm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

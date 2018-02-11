@@ -14,8 +14,8 @@ struct Settings {
     var hoursShowed: Int = 12
     var showCommercialStationsOnly: Bool = false
     var showCargo: Bool = true
-    
-    
+    var showLongDistance: Bool = true
+    var showCommuter: Bool = true
 }
 
 protocol settingsProtocol {
@@ -28,6 +28,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var commercialStationsOnlySwitch: UISwitch!
     @IBOutlet weak var cargoSwitch: UISwitch!
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var longDistanceSwitch: UISwitch!
+    @IBOutlet weak var commuterSwitch: UISwitch!
+    
     
     var settings = Settings()
     var delegate: settingsProtocol?
@@ -38,7 +41,10 @@ class SettingsViewController: UIViewController {
         hourLabel.text = "Näytä junat seuraavan " + String(settings.hoursShowed) + " tunnin ajalta."
         hourSlider.value = Float(settings.hoursShowed)
         commercialStationsOnlySwitch.isOn = settings.showCommercialStationsOnly
-        cargoSwitch.isOn = !settings.showCargo
+        cargoSwitch.isOn = settings.showCargo
+        longDistanceSwitch.isOn = settings.showLongDistance
+        commuterSwitch.isOn = settings.showCommuter
+        
 
         // Do any additional setup after loading the view.
     }
@@ -63,8 +69,20 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func cargoSwitchValueChanged(_ sender: UISwitch) {
-        settings.showCargo = !sender.isOn
+        settings.showCargo = sender.isOn
         delegate?.setSettings(settings: settings)
     }
+    
+    @IBAction func longDistanceSwitchValueChanged(_ sender: UISwitch) {
+        settings.showLongDistance = sender.isOn
+        delegate?.setSettings(settings: settings)
+    }
+    
+    @IBAction func commuterSwitchValueChanged(_ sender: UISwitch) {
+        settings.showCommuter = sender.isOn
+        delegate?.setSettings(settings: settings)
+    }
+    
+    
 
 }

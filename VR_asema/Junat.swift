@@ -8,13 +8,6 @@
 
 import UIKit
 
-// Tietotyyppi aikataulutaulukkoa varten
-struct RouteRow {
-    var station: String
-    var arrivalTime: Date?
-    var departingTime: Date?
-    var cancelled: Bool
-}
 
 // TimeTableRows- tietotyyppi
 struct TimeTableRow: Codable {  // Info Kuvaa saapumisia ja lähtöjä liikennepaikoilta. Järjestetty reitin mukaiseen järjestykseen.
