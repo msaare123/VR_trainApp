@@ -57,9 +57,9 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
             else if difference > 0 {
                 cell.additional_label.text = String(difference * -1) + " min ajoissa"
             }
-            else { cell.additional_label.isHidden = true }
+            else { cell.additional_label.text = "" }
         }
-        else { cell.additional_label.isHidden = true }
+        else { cell.additional_label.text = "" }
         
         if timeTableRaw[indexPath.row].type == "DEPARTURE" {
             cell.time_label.isHidden = false
