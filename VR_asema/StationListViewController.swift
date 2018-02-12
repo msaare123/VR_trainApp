@@ -33,6 +33,13 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         return fromDate
     }()
     
+    //Pelkän kellonajan esitykseen oma dateformatter
+    private static let fromDateTimeOnly: DateFormatter = {
+        let fromDateTimeOnly = DateFormatter()
+        fromDateTimeOnly.dateFormat = "HH:mm"
+        return fromDateTimeOnly
+    }()
+    
     //IF Outlets
     @IBOutlet weak var tableActivity: UIActivityIndicatorView!
     @IBOutlet weak var TrainTableView: UITableView!
@@ -216,20 +223,23 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         
         //Asetetaan labelien sisällöt
         if (filteredStationRow.count > 0) {
-            //Lähtökohtaisesti etsitään arvio-aikaa. Jos se on tyhjä niin palautetaan aikataulun aika. actualTimeä ei näissä tapauksissa voi olla
+            //Lähtökohtaisesti etsitään arvio-aikaa. Jos se on tyhjä niin palautetaan aikataulun aika. actualTimeä ei näissä tapauksissa voi olla. Esitetään tänään lähtevissä ja saapuvissa vain kellonaika
+            let bestTime: Date
             if filteredStationRow[0].liveEstimateTime != nil {
-                if selectedAction == "DEPARTURE" {
-                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
-                }
-                else if selectedAction == "ARRIVAL" {
-                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
-                }
+                bestTime = filteredStationRow[0].liveEstimateTime!
             }
             else {
-                if selectedAction == "DEPARTURE" {
-                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].scheduledTime)}
-                else if selectedAction == "ARRIVAL" {
-                    cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].scheduledTime)}
+                bestTime = filteredStationRow[0].scheduledTime
+            }
+            //Tänään tapahtuvissa tapahtumissa näytetään pelkkä kellonaika, huomisissa teksti myös, että huomenna ja muissa myös päivämäärä
+            if Calendar.current.isDateInToday(bestTime){
+                cell.timeLabel.text = StationListViewController.fromDateTimeOnly.string(from: bestTime)
+            }
+            else if Calendar.current.isDateInTomorrow(bestTime){
+                cell.timeLabel.text = "Huomenna " + StationListViewController.fromDateTimeOnly.string(from: bestTime)
+            }
+            else {
+                cell.timeLabel.text = StationListViewController.fromDate.string(from: bestTime)
             }
         }
         //Junan numero koostuu tyyppikoodista ja numerosta
