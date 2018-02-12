@@ -185,6 +185,7 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                     self.tableActivity.stopAnimating()
                 }
             }catch{
+                //Mikäli tapahtuu virhe, esitetään käyttäjälle popup
                 let alert = UIAlertController(title: "Virhe!", message: "Tapahtui virhe tietoja käsitellessä.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                     NSLog("Download error occured while downloading stationdata! :" + error.localizedDescription)
@@ -215,6 +216,7 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         
         //Asetetaan labelien sisällöt
         if (filteredStationRow.count > 0) {
+            //Lähtökohtaisesti etsitään arvio-aikaa. Jos se on tyhjä niin palautetaan aikataulun aika. actualTimeä ei näissä tapauksissa voi olla
             if filteredStationRow[0].liveEstimateTime != nil {
                 if selectedAction == "DEPARTURE" {
                     cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].liveEstimateTime!)
@@ -230,8 +232,13 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
                     cell.timeLabel.text = StationListViewController.fromDate.string(from: filteredStationRow[0].scheduledTime)}
             }
         }
+        //Junan numero koostuu tyyppikoodista ja numerosta
         cell.trainNumberLabel.text = String(junat[indexPath.row].trainType) + String(junat[indexPath.row].trainNumber)
-        cell.category_label.text = categoryTranslation[junat[indexPath.row].trainCategory]
+        //Käännetään junan kategoria suomeksi
+        if categoryTranslation[junat[indexPath.row].trainCategory] != nil {
+            cell.category_label.text = categoryTranslation[junat[indexPath.row].trainCategory]
+        }
+        //Etsitään reitin lähtö ja pääteasemien indeksit ja esitetään ne trainLabel -kentässä
         let firstStationIndex = stations.index(where:{ (station) -> Bool in
             station.stationShortCode == junat[indexPath.row].timeTableRows[0].stationShortCode
         })

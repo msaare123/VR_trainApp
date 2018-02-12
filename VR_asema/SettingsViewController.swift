@@ -11,6 +11,7 @@
 import UIKit
 
 struct Settings {
+    //asetus-tietotyyppi. Sisältää samalla myös initial-asetukset
     var hoursShowed: Int = 12
     var showCommercialStationsOnly: Bool = false
     var showCargo: Bool = true
@@ -19,6 +20,7 @@ struct Settings {
 }
 
 protocol settingsProtocol {
+    //Protokolla jolla asetukset välitetään takaisin päin
     func setSettings(settings: Settings )
 }
 
@@ -38,6 +40,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Asetetaan kytkimet ja kentät asetusten mukaisiksi
         hourLabel.text = "Näytä junat seuraavan " + String(settings.hoursShowed) + " tunnin ajalta."
         hourSlider.value = Float(settings.hoursShowed)
         commercialStationsOnlySwitch.isOn = settings.showCommercialStationsOnly

@@ -11,9 +11,9 @@ import UIKit
 class RouteDetailViewController: UIViewController, UITableViewDataSource {
     
     //Toisesta näkymästä tulevat muuttujat
-    var timeTableRaw = [TimeTableRow]()
-    var stations = [Station]()
-    var navTitle: String? = nil
+    var timeTableRaw = [TimeTableRow]() //Valitun aikataulun data
+    var stations = [Station]() //asemataulukko asemien nimien esitykseen
+    var navTitle: String? = nil //navBarin otsikko
     
     private static let fromDate: DateFormatter = {
         //Siistimpään päivämääräesitykseen tehdään oma dateformatter
@@ -49,21 +49,18 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "routeProto") as? RouteTableViewCell
             else{return UITableViewCell()}
         
-
-        
-
+        //additional_label ei käytössä
         cell.additional_label.isHidden = true
 
         if timeTableRaw[indexPath.row].type == "DEPARTURE" {
             cell.time_label.isHidden = false
             cell.timetext_label.isHidden = false
             cell.timetext_label.text = "Lähtöaika:"
+            //Oletusarvoisesti koetetaan löytää actualTime, mutta jos sitä ei ole niin liveEstimate ja viimeisenä vasta haetaan aikataulun mukainen aika scheduledTime
             if timeTableRaw[indexPath.row].actualTime != nil {
                 cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
-                cell.additional_label.text = "actual"
             }
             else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
-                cell.additional_label.text = "estimate"
                 cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
             }
             else {
