@@ -49,9 +49,18 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "routeProto") as? RouteTableViewCell
             else{return UITableViewCell()}
         
-        //additional_label ei käytössä
-        cell.additional_label.isHidden = true
-
+        //Jos aikaeroa aikatauluun verrattuna. Kerrotaan siitä käyttäjälle
+        if let difference = timeTableRaw[indexPath.row].differenceInMinutes {
+            if difference > 0 {
+                cell.additional_label.text = String(difference) + " min myöhässä"
+            }
+            else if difference > 0 {
+                cell.additional_label.text = String(difference * -1) + " min ajoissa"
+            }
+            else { cell.additional_label.isHidden = true }
+        }
+        else { cell.additional_label.isHidden = true }
+        
         if timeTableRaw[indexPath.row].type == "DEPARTURE" {
             cell.time_label.isHidden = false
             cell.timetext_label.isHidden = false

@@ -225,21 +225,30 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         if (filteredStationRow.count > 0) {
             //Lähtökohtaisesti etsitään arvio-aikaa. Jos se on tyhjä niin palautetaan aikataulun aika. actualTimeä ei näissä tapauksissa voi olla. Esitetään tänään lähtevissä ja saapuvissa vain kellonaika
             let bestTime: Date
+            var differenceText: String = ""
             if filteredStationRow[0].liveEstimateTime != nil {
                 bestTime = filteredStationRow[0].liveEstimateTime!
+                if let difference = filteredStationRow[0].differenceInMinutes {
+                    if difference > 0 {
+                        differenceText = " (" + String(difference) + " min myöhässä)"
+                    }
+                    else if difference > 0 {
+                        differenceText = " (" + String(difference * -1) + " min ajoissa)"
+                    }
+                }
             }
             else {
                 bestTime = filteredStationRow[0].scheduledTime
             }
             //Tänään tapahtuvissa tapahtumissa näytetään pelkkä kellonaika, huomisissa teksti myös, että huomenna ja muissa myös päivämäärä
             if Calendar.current.isDateInToday(bestTime){
-                cell.timeLabel.text = StationListViewController.fromDateTimeOnly.string(from: bestTime)
+                cell.timeLabel.text = StationListViewController.fromDateTimeOnly.string(from: bestTime) + differenceText
             }
             else if Calendar.current.isDateInTomorrow(bestTime){
-                cell.timeLabel.text = "Huomenna " + StationListViewController.fromDateTimeOnly.string(from: bestTime)
+                cell.timeLabel.text = "Huomenna " + StationListViewController.fromDateTimeOnly.string(from: bestTime) + differenceText
             }
             else {
-                cell.timeLabel.text = StationListViewController.fromDate.string(from: bestTime)
+                cell.timeLabel.text = StationListViewController.fromDate.string(from: bestTime) + differenceText
             }
         }
         //Junan numero koostuu tyyppikoodista ja numerosta
