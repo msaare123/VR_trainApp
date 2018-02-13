@@ -21,16 +21,18 @@ class VR_asemaTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testScandiConversion() {
+        let VC = StationListViewController()
+        let withoutScandi = "RHE" //Testi ilman ääkkösiä
+        let withScandi = "ÖKY" //Testi ääkkösillä
+        let onlyScandi = "ÄÖÄ" //Testi pelkillä ääkkösillä
+        let special = "ÖLDFS" //Testi pidemmällä stringillä
+        XCTAssertEqual(VC.urlConvertScandi(string: withoutScandi), "RHE")
+        XCTAssertEqual(VC.urlConvertScandi(string: withScandi), "%C3%96KY")
+        XCTAssertEqual(VC.urlConvertScandi(string: onlyScandi), "%C3%84%C3%96%C3%84")
+        XCTAssertEqual(VC.urlConvertScandi(string: special), "%C3%96LDFS")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
     
 }
