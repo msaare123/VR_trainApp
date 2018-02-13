@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, settingsProtocol {
+class ViewController: UIViewController, UISearchResultsUpdating, settingsProtocol {
 
     @IBOutlet weak var stationTableView: UITableView!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
@@ -44,7 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func downloadStationData(){
         //Lataa listan asemista
@@ -84,25 +83,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.present(alert, animated: true, completion: nil)
             }
             }.resume()
-    }
-    
-    
-    //Taulukkonäkymän luomiseen tarvittavat funktiot
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return asematFiltered.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StationTableProto") as? StationTableViewCell
-            else {return UITableViewCell()}
-        cell.station_label.text = asematFiltered[indexPath.row].stationName
-        return cell
-    }
-    
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Suoritetaan kun kohde valitaan TableView-näkymässä
-        rowSelection = indexPath.row
     }
     
     //Lähettää TableView:n valitun rivin tiedon toiselle ViewControllerille
@@ -161,6 +141,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func setSettings(settings: Settings) {
         self.settings = settings
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    //Taulukkonäkymän luomiseen tarvittavat funktiot
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return asematFiltered.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StationTableProto") as? StationTableViewCell
+            else {return UITableViewCell()}
+        cell.station_label.text = asematFiltered[indexPath.row].stationName
+        return cell
+    }
+    
+}
+
+extension ViewController: UITableViewDelegate {
+    //Valinnan tapahtuessa suoritettava funktio
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Suoritetaan kun kohde valitaan TableView-näkymässä
+        rowSelection = indexPath.row
     }
 }
 

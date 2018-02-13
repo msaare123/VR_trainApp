@@ -65,7 +65,6 @@ class SettingsViewController: UIViewController {
         hourLabel.text = "Näytä junat seuraavan " + String(settings.hoursShowed) + " tunnin ajalta."
     }
     
-    
     @IBAction func commercialStationsOnlySwitchValueChanged(_ sender: UISwitch) {
         settings.showCommercialStationsOnly = sender.isOn
         delegate?.setSettings(settings: settings)

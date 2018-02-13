@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteDetailViewController: UIViewController, UITableViewDataSource {
+class RouteDetailViewController: UIViewController {
     
     //Toisesta näkymästä tulevat muuttujat
     var timeTableRaw = [TimeTableRow]() //Valitun aikataulun data
@@ -22,8 +22,6 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         return fromDate
     }()
     
-
-
     @IBOutlet weak var routeTableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +38,11 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+}
+
+extension RouteDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeTableRaw.count
@@ -61,50 +64,42 @@ class RouteDetailViewController: UIViewController, UITableViewDataSource {
         }
         else { cell.additional_label.text = "" }
         
+        //Label sen mukaan onko aika lähtö vai saapuminen
         if timeTableRaw[indexPath.row].type == "DEPARTURE" {
             cell.time_label.isHidden = false
             cell.timetext_label.isHidden = false
             cell.timetext_label.text = "Lähtöaika:"
-            //Oletusarvoisesti koetetaan löytää actualTime, mutta jos sitä ei ole niin liveEstimate ja viimeisenä vasta haetaan aikataulun mukainen aika scheduledTime
-            if timeTableRaw[indexPath.row].actualTime != nil {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
-            }
-            else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
-            }
-            else {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
-            }
         }
             
         else if timeTableRaw[indexPath.row].type == "ARRIVAL" {
             cell.time_label.isHidden = false
             cell.timetext_label.isHidden = false
             cell.timetext_label.text = "Saapumisaika:"
-            if timeTableRaw[indexPath.row].actualTime != nil {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
-            }
-            else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
-            }
-            else {
-                cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
-            }
         }
         else {
             cell.timetext_label.isHidden = true
             cell.time_label.isHidden = true
         }
         
+        //Oletusarvoisesti koetetaan löytää actualTime, mutta jos sitä ei ole niin liveEstimate ja viimeisenä vasta haetaan aikataulun mukainen aika scheduledTime
+        if timeTableRaw[indexPath.row].actualTime != nil {
+            cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].actualTime!)
+        }
+        else if timeTableRaw[indexPath.row].liveEstimateTime != nil {
+            cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].liveEstimateTime!)
+        }
+        else {
+            cell.time_label.text = RouteDetailViewController.fromDate.string(from: timeTableRaw[indexPath.row].scheduledTime)
+        }
+        
         let stationIndex = stations.index(where:{ (station) -> Bool in
             station.stationShortCode == timeTableRaw[indexPath.row].stationShortCode
         })
-
+        
         if stationIndex != nil {
-        cell.station_label.text = stations[stationIndex!].stationName
+            cell.station_label.text = stations[stationIndex!].stationName
         }
         
         return cell
     }
-
 }

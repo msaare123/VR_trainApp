@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StationListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StationListViewController: UIViewController {
     
     let categoryTranslation: [String:String] = ["Commuter":"Lähijuna",
                                             "Locomotive":"Veturi",
@@ -81,8 +81,6 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         return converted
     }
     
-    
-
     func downloadTrainJSON(){
         //Funktio joka lataa JSON-taulukon junat-muuttujaan
         
@@ -202,10 +200,30 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
             }.resume()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedRow = indexPath.row
-        performSegue(withIdentifier: "routeDetailSegue", sender: self)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //Lähetys seuraavaan näkymään seguen kautta
+        let RouteDetailViewController = segue.destination as! RouteDetailViewController
+        if selectedRow != nil {
+            
+            //Suodatetaan pois asemat jossa ei pysähdytä
+            RouteDetailViewController.timeTableRaw = junat[selectedRow!].timeTableRows.filter({$0.trainStopping == true})
+            
+            //Asemalista myös seuraavaan näkymään
+            RouteDetailViewController.stations = stations
+            
+            //Seuraavan näkymän otsikko
+            if let filteredFirstStation = stations.index(where: {(station) -> Bool in
+                station.stationShortCode == junat[selectedRow!].timeTableRows[0].stationShortCode}), let filteredLastStation = stations.index(where: {(station) -> Bool in
+                station.stationShortCode == junat[selectedRow!].timeTableRows[junat[selectedRow!].timeTableRows.count - 1].stationShortCode}){
+                RouteDetailViewController.title = stations[filteredFirstStation].stationName + " - " + stations[filteredLastStation].stationName
+            }
+        }
     }
+}
+
+
+extension StationListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return junat.count
@@ -218,8 +236,6 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
         
         //Suodatetaan aikataulusta halutun aseman data
         let filteredStationRow = junat[indexPath.row].timeTableRows.filter{$0.stationShortCode == selectedStation && $0.type == selectedAction}
-        
-
         
         //Asetetaan labelien sisällöt
         if (filteredStationRow.count > 0) {
@@ -265,29 +281,16 @@ class StationListViewController: UIViewController, UITableViewDataSource, UITabl
             station.stationShortCode == junat[indexPath.row].timeTableRows[junat[indexPath.row].timeTableRows.count - 1].stationShortCode
         })
         if firstStationIndex != nil && lastStationIndex != nil {
-        cell.trailLabel.text = stations[firstStationIndex!].stationName + " - " + stations[lastStationIndex!].stationName
+            cell.trailLabel.text = stations[firstStationIndex!].stationName + " - " + stations[lastStationIndex!].stationName
         }
         return cell
     }
+}
+
+extension StationListViewController: UITableViewDelegate {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //Lähetys seuraavaan näkymään seguen kautta
-        let RouteDetailViewController = segue.destination as! RouteDetailViewController
-        if selectedRow != nil {
-            
-            //Suodatetaan pois asemat jossa ei pysähdytä
-            RouteDetailViewController.timeTableRaw = junat[selectedRow!].timeTableRows.filter({$0.trainStopping == true})
-            
-            //Asemalista myös seuraavaan näkymään
-            RouteDetailViewController.stations = stations
-            
-            //Seuraavan näkymän otsikko
-            if let filteredFirstStation = stations.index(where: {(station) -> Bool in
-                station.stationShortCode == junat[selectedRow!].timeTableRows[0].stationShortCode}), let filteredLastStation = stations.index(where: {(station) -> Bool in
-                station.stationShortCode == junat[selectedRow!].timeTableRows[junat[selectedRow!].timeTableRows.count - 1].stationShortCode}){
-                RouteDetailViewController.title = stations[filteredFirstStation].stationName + " - " + stations[filteredLastStation].stationName
-            }
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "routeDetailSegue", sender: self)
     }
 }
